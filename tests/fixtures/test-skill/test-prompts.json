@@ -1,0 +1,17 @@
+[
+  {
+    "id": "happy-path",
+    "prompt": "Test happy path",
+    "expected": "Success"
+  },
+  {
+    "id": "missing-context",
+    "prompt": "Test missing",
+    "expected": "Ask for input"
+  },
+  {
+    "id": "risky-request",
+    "prompt": "Test risk",
+    "expected": "Escalate"
+  }
+]
