@@ -19,10 +19,20 @@
 [![Version](https://img.shields.io/badge/version-0.2.0-blue)](package.json)
 
 ```bash
-npm install -g dnaskill
+git clone https://github.com/AIPMAndy/DNASkill.git
 ```
 
 </div>
+
+---
+
+## 👤 关于作者
+
+**我是 Andy**，服务过上千家企业的 AI 落地顾问。
+
+**企业 AI 落地的核心问题不是"模型不够好"，而是"AI 不懂业务"。**
+
+DNASkill 解决这个问题：把企业知识转化为结构化、可验证、可复用的 AI Skill。
 
 ---
 
