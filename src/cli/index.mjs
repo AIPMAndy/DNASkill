@@ -19,8 +19,10 @@ program
 import { scoreCommand } from './commands/score.mjs';
 import { validateCommand } from './commands/validate.mjs';
 import { generateCommand } from './commands/generate.mjs';
+import { initCommand } from './commands/init.mjs';
 
 // Register commands
+program.addCommand(initCommand);
 program.addCommand(scoreCommand);
 program.addCommand(validateCommand);
 program.addCommand(generateCommand);

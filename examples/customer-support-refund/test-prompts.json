@@ -1,0 +1,32 @@
+[
+  {
+    "id": "happy-path-standard-refund",
+    "prompt": "Customer purchased a laptop 15 days ago (Order #12345) and wants a refund because they found a better deal elsewhere. Product is unused and in original packaging. Customer is regular tier.",
+    "expected": "Skill should approve the refund (within 30-day window, product eligible, amount assumably ≤ 1000 CNY), draft a professional response explaining the approval, provide refund timeline (3-5 business days), and create internal notes documenting the decision with policy reference S01."
+  },
+  {
+    "id": "missing-context-no-order-id",
+    "prompt": "Customer says they want a refund for a phone they bought last week but doesn't provide an order number.",
+    "expected": "Skill should ask for the order ID, explain that it's required to process the refund, and not make any eligibility assumptions. Should use empathetic tone and provide instructions on where to find the order number."
+  },
+  {
+    "id": "risky-escalation-high-amount",
+    "prompt": "VIP customer requests refund for custom furniture (Order #67890, amount: 3500 CNY, purchased 40 days ago). Customer is unhappy with color match.",
+    "expected": "Skill should escalate because: (1) amount > 1000 CNY agent limit, (2) custom product typically non-refundable, (3) VIP customer satisfaction concern. Should draft escalation summary with all required context (order ID, customer tier, amount, reason), reference conflicting rules (custom product policy vs VIP satisfaction), and recommend supervisor review."
+  },
+  {
+    "id": "edge-case-vip-extended-window",
+    "prompt": "VIP customer requests refund for a camera (Order #54321, amount: 800 CNY, purchased 45 days ago). Standard product, unused condition.",
+    "expected": "Skill should approve the refund. VIP customers have 60-day window (vs 30-day standard), amount is within agent authority (≤ 1000 CNY), product is eligible. Should draft response acknowledging VIP status, confirming approval, and providing refund timeline."
+  },
+  {
+    "id": "denied-promotional-item",
+    "prompt": "Customer wants refund for a promotional item (Order #99999, bought during Black Friday sale, 10 days ago). Says product doesn't meet expectations.",
+    "expected": "Skill should deny the refund per policy (promotional items not eligible). Should draft empathetic response explaining the promotional item restriction, reference policy S01, suggest alternatives if available (exchange, store credit if authorized), and maintain professional tone despite denial."
+  },
+  {
+    "id": "ambiguous-policy-conflict",
+    "prompt": "Customer purchased a subscription service (Order #11111, 20 days ago) and wants a refund. Policy S01 says 30-day window applies, but subscription terms say non-refundable after activation.",
+    "expected": "Skill should detect the policy conflict between general refund policy and subscription-specific terms. Should NOT make a decision. Should escalate to supervisor with both policy references, explain the conflict, and ask for clarification. Should not give customer a decision yet, but acknowledge the request and promise follow-up."
+  }
+]
